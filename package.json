@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "name": "correcteur-pro",
+  "version": "1.0.0",
+  "description": "CorrecteurPro - Assistant IA pour corriger les copies",
+  "main": "correcteur_pro.html"
+}
