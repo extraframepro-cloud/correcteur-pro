@@ -1,9 +1,7 @@
 // api/correct.js — Vercel Edge Function
 // Proxy sécurisé pour l'API Anthropic
-// La clé API reste côté serveur, jamais exposée au client
 
 export default async function handler(req, res) {
-  // Seulement POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -16,19 +14,17 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'API key not configured' });
     }
 
-    // Récupère les messages du frontend
     const { messages, model, max_tokens, system } = req.body;
 
     if (!messages) {
       return res.status(400).json({ error: 'Missing messages' });
     }
 
-    // Appelle Anthropic avec la clé sécurisée
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': API_KEY, // ← Sécurisé côté serveur
+        'x-api-key': API_KEY,
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
