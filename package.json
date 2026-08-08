@@ -1,7 +1,11 @@
 {
-  "type": "module",
-  "name": "correcteur-pro",
+  "name": "correcteur-pro-backend",
   "version": "1.0.0",
-  "description": "CorrecteurPro - Assistant IA pour corriger les copies",
-  "main": "correcteur_pro.html"
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "18"
+  }
 }
