@@ -1,7 +1,4 @@
-// api/correct.js — Vercel Edge Function
-// Proxy sécurisé pour l'API Anthropic
-
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -10,7 +7,6 @@ export default async function handler(req, res) {
     const API_KEY = process.env.ANTHROPIC_API_KEY;
     
     if (!API_KEY) {
-      console.error('Missing ANTHROPIC_API_KEY');
       return res.status(500).json({ error: 'API key not configured' });
     }
 
@@ -38,17 +34,15 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     if (!response.ok) {
-      console.error('Anthropic error:', data);
       return res.status(response.status).json(data);
     }
 
     return res.status(200).json(data);
 
   } catch (error) {
-    console.error('Proxy error:', error);
     return res.status(500).json({ 
       error: 'Internal server error',
       details: error.message 
     });
   }
-}
+};
