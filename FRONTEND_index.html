@@ -1193,7 +1193,7 @@ function buildPrompt(forClass){
 async function callAPI(messages){
   try {
     // CHANGE CETTE URL AVEC TA VRAIE URL RAILWAY
-    var backendUrl = 'https://correcteur-pro-production.up.railway.app/api/correct';
+    var backendUrl = 'correcteur-pro-backend-production.up.railway.app';
     
     var resp = await fetch(backendUrl, {
       method:'POST',
