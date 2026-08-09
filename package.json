@@ -7,7 +7,7 @@
     "dev": "node server.js"
   },
   "engines": {
-    "node": "18"
+    "node": "24.x"
   },
   "keywords": ["correcteur", "ia", "education"],
   "author": "Kevine",
