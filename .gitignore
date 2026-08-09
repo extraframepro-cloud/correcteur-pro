@@ -1,0 +1,39 @@
+# .gitignore pour Railway (Backend Node.js)
+# Fichier de sécurité - évite de pusher les secrets et fichiers inutiles
+
+# Environment variables - JAMAIS push la clé API !
+.env
+.env.local
+.env.*.local
+.env.prod.local
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Build/cache
+.next/
+dist/
+build/
+.cache/
+
+# Railway
+.vercel
