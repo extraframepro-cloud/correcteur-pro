@@ -1,18 +1,10 @@
-# .gitignore pour Railway (Backend Node.js)
-# Fichier de sécurité - évite de pusher les secrets et fichiers inutiles
+# .gitignore pour Vercel (Frontend)
+# Fichier de sécurité - évite de pusher les secrets
 
-# Environment variables - JAMAIS push la clé API !
+# Environment variables
 .env
 .env.local
 .env.*.local
-.env.prod.local
-
-# Node modules
-node_modules/
-npm-debug.log
-yarn-error.log
-package-lock.json
-yarn.lock
 
 # OS files
 .DS_Store
@@ -25,15 +17,9 @@ Thumbs.db
 *.swo
 *~
 
-# Logs
+# Vercel
+.vercel
+
+# Misc
 *.log
 logs/
-
-# Build/cache
-.next/
-dist/
-build/
-.cache/
-
-# Railway
-.vercel
